@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener - Welcome</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling with darker gradient background */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #232c4d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f0f0f0;
+            /* position: relative; For absolute positioning of decorative elements */
+        }
+
+        /* Decorative shapes */
+        .decorative-shape {
+            position: absolute;
+            width: 300px;
+            /* height: 300px; */
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .decorative-shape:nth-child(1) {
+            background: #6a11cb;
+            top: -50px;
+            left: -50px;
+        }
+
+        .decorative-shape:nth-child(2) {
+            background: #2575fc;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        /* Container for the content */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Keep it above decorative shapes */
+        }
+
+        /* Heading with a subtle gradient */
+        h1 {
+            font-size: 32px;
+            /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+            background: white;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        /* Button container */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Clean and sleek button styles */
+        button {
+            padding: 12px 35px;
+            font-size: 18px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s ease;
+        }
+
+        /* Subtle hover effect */
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        /* Style links inside buttons */
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+
+            .container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-shape"></div>
+    <div class="decorative-shape"></div>
+    <div class="container">
+        <h1>Welcome To The URL Shortener</h1>
+        <div class="button-container">
+            <button><a href="/login">Login</a></button>
+            <button><a href="/signup">Sign-Up</a></button>
+        </div>
+    </div>
+</body>
+</html>

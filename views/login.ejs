@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - URL Shortener</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Setting background and font properties */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #232c4d);
+            height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative; /* For absolute positioning of decorative elements */
+        }
+
+        /* Decorative shapes */
+        .decorative-shape {
+            position: absolute;
+            width: 300px;
+            /* height: 300px; */
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .decorative-shape:nth-child(1) {
+            background: #6a11cb;
+            top: -50px;
+            left: -50px;
+        }
+
+        .decorative-shape:nth-child(2) {
+            background: #2575fc;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        /* Navigation bar styling */
+        .navbar {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Navigation bar title */
+        .navbar h2 {
+            margin: 0;
+            color: #f0f0f0;
+        }
+
+        /* Login form container styling */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Keep it above decorative shapes */
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+
+        /* Form elements styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #999;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-top: 18px;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Link for forgotten password */
+        .forgot-password {
+            font-size: 15px;
+            color: #f0f0f0;
+            margin-top: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+
+            .navbar h2 {
+                font-size: 20px;
+            }
+
+            body {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                font-size: 16px;
+                padding: 14px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 14px 28px;
+            }
+
+            .navbar h2 {
+                font-size: 18px;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-shape"></div>
+    <div class="decorative-shape"></div>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <h2>URL Shortener</h2>
+    </div>
+
+    <!-- Login form container -->
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+
+            <div class="forgot-password">Forgot password?</div>
+        </form>
+    </div>
+</body>
+</html>

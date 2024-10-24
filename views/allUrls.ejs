@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All URL List</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Setting background and font properties */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #2f2f4f);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #e5e5ea;
+        }
+
+        /* Navigation bar styling */
+        .navbar {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Navigation bar links */
+        .navbar h2 {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #e5e5ea;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .user-info {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+        }
+
+        /* User information section */
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .user-info p {
+            margin: 0;
+            font-size: 16px;
+            color: #e5e5ea;
+        }
+
+        /* Hamburger menu icon */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #e5e5ea;
+        }
+
+        /* Container for displaying URLs */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            width: 100%;
+            height: 73%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 50px; /* Adjusted for consistent spacing */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        /* List styling for URLs */
+        .url-list {
+            text-align: left;
+            margin-top: 20px;
+            max-height: 370px; /* Set a maximum height */
+            overflow-y: auto; /* Allow vertical scrolling */
+            width: 100%; /* Full width */
+        }
+
+        .url-list h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .url-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .url-list li {
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #555;
+            border-radius: 8px;
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        .url-list li:hover {
+            background-color: rgb(221, 221, 221);
+        }
+
+        /* Long URL styling */
+        .long-url {
+            color: black;
+            display: block;
+            margin: 4px 0;
+            white-space: nowrap;  /* Keep the URL on one line */
+            overflow: hidden;     /* Hide the overflow */
+            text-overflow: ellipsis; /* Show ellipsis (...) for long URLs */
+            max-width: 100%;      /* Ensure it doesn't overflow the container */
+        }
+
+        /* Short URL styling */
+        .short-url {
+            display: block;
+            margin: 5px 0;
+            color: #007bff; /* Different color for short URL */
+            word-wrap: break-word; /* Allows the short URL to wrap if needed */
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .container {
+                padding: 30px;
+                max-width: 100%;
+                margin-top: 50px;
+            }
+
+            .url-list {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .navbar h2 {
+                font-size: 20px;
+            }
+
+            body {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container, .url-list {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .navbar h2 {
+                font-size: 18px;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <h2>URL Shortener</h2>
+        <div class="nav-links">
+            <a href="/url">Home</a>
+            <a href="/url/allurl">All Urls</a>
+            <a href="/url/#">Explore</a>
+            <a href="/url/logout">Logout</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+        <!-- User information -->
+        <div class="user-info" id="user-info">
+            <img src="https://via.placeholder.com/40" alt="User Image">
+            <p>John Doe</p>
+        </div>
+    </div>
+
+    <!-- URL display container -->
+    <div class="container">
+        <h1>Generated URLs</h1>
+        <div class="url-list">
+            <h2 align="center">Your URLs</h2>
+            <ul>
+                <% if (urls.length > 0) { %>
+                    <% urls.forEach(function(url) { %>
+                        <li>
+                            <span class="long-url"><strong>Long-URL:</strong> <%= url.redirectURL %></span>
+                            <span class="short-url"><strong>Short-URL:</strong> http://192.168.1.2:3000/<%= url.shortId %></span>
+                        </li>
+                    <% }); %>
+                <% } else { %>
+                    <li>No URLs generated yet.</li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const userInfo = document.getElementById('user-info');
+            userInfo.style.display = userInfo.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Data - URL Shortener</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Setting background and font properties */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #232c4d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative; /* For absolute positioning of decorative elements */
+        }
+
+        /* Decorative shapes */
+        .decorative-shape {
+            position: absolute;
+            width: 300px;
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .decorative-shape:nth-child(1) {
+            background: #6a11cb;
+            top: -50px;
+            left: -50px;
+        }
+
+        .decorative-shape:nth-child(2) {
+            background: #2575fc;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        /* Signup form container styling */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 180px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Keep it above decorative shapes */
+        }
+
+        /* Header styling */
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+
+        /* Form elements styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #999;
+            text-align: left;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+
+        /* Button styling */
+        .button input[type="submit"] {
+            padding: 14px 230px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-top: 18px;
+        }
+
+        /* Button hover effect */
+        .button input[type="submit"]:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+                max-width: 100%;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"], input[type="password"], input[type="email"], input[type="tel"],input[type="radio"] {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .button input[type="submit"] {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+
+            input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+                font-size: 16px;
+                padding: 14px;
+            }
+
+            .button input[type="submit"] {
+                font-size: 16px;
+                padding: 14px 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decorative-shape"></div>
+    <div class="decorative-shape"></div>
+
+    <!-- Signup Form Container -->
+    <div class="container">
+        <h2>Signup</h2>
+        <form name="signup-form" action="/signup/otp" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required name="name">
+
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" required name="username">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required name="identifier">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your number" required name="phone">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required name="password">
+
+            <label for="otp">OTP</label>
+            <input type="text" id="otp" placeholder="Enter OTP" required name="otp">
+
+            <div class="gender-details">
+                <span class="gender-title" ><h3 color="grey">Gender</h3></span>
+                <div class="category">
+                    <label for="male">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="female">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <span class="gender">Female</span>
+                    </label>
+                    <label for="other">
+                        <input type="radio" id="other" name="gender" value="other">
+                        <span class="gender">Prefer not to say</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
