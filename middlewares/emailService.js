@@ -6,7 +6,7 @@ const otpStore = {};
 
 
 
-sgMail.setApiKey('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');
+sgMail.setApiKey('SG.rVgUAoUYRuGL6h8srBLMinvQ.soulcbl5lYz-ATux4NRUp8AY2PyoGYA099UOkzZXUIUEhPIfsesport');
 
 
 exports.emailAuthentication= async(req,res,next)=>{
