@@ -27,7 +27,7 @@ A **scalable URL shortener** web application that provides a fast and efficient 
 - **JavaScript**: For frontend interactivity and form validations.
 
 ## Architecture 🏗️
-![architecture-diagram](https://example.com/architecture-diagram.png) _
+![architecture-diagram]([https://drive.google.com/file/d/1Jfd6pfxXSxzyX0Tp88Rp8seh2xjJMp1C/view?usp=drive_link]
 1. **Client Requests**: User sends requests from the frontend (HTML, CSS, JS) after login.
 2. **Authentication**: User login is verified using JWT. Redis handles the session storage.
 3. **Caching Layer**: Frequently accessed URLs are stored in Redis to avoid database lookups.
