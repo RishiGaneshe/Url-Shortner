@@ -59,16 +59,6 @@ A **scalable URL shortener** web application that provides a fast and efficient 
     npm start
     ```
 
-## API Endpoints 🔗
-
-| Method | Endpoint            | Description                   | Authentication |
-|--------|---------------------|-------------------------------|-----------------|
-| POST   | `/sign-up`          | Create a new user account     | ❌              |
-| POST   | `/login`            | Log in to the system          | ❌              |
-| POST   | `/url/logout`       | Log out from the system       | ✅              |
-| POST   | `/url/shorten`      | Shorten a new URL             | ✅              |
-| GET    | `/url/:shortUrl`    | Redirect to the original URL  | ❌              |
-
 ---
 
 Made with ❤️ by [Abhishek Ganeshe](https://github.com/RishiGaneshe)
