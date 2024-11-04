@@ -61,6 +61,6 @@ A **scalable URL shortener** web application that provides a fast and efficient 
 
 ---
 
-Made with ❤️ by [Abhishek Ganeshe](https://github.com/RishiGaneshe)
+Made by [Abhishek Ganeshe](https://github.com/RishiGaneshe)
 
  
