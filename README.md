@@ -38,7 +38,7 @@ A **scalable URL shortener** web application that provides a fast and efficient 
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/url-shortener.git
+    git clone https://github.com/RishiGaneshe/url-shortener.git
     ```
 2. **Install dependencies**:
     ```bash
