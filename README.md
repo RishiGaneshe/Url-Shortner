@@ -1,4 +1,10 @@
 # 🌐 URL Shortener Website
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node-dot-js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 
 ## Overview
 A **scalable URL shortener** web application that provides a fast and efficient way to shorten URLs. The website uses a secure **user authentication system**  by **JWT tokens**, along with **Redis** for caching frequently accessed URLs and for **JWT token invalidation**. The backend is built on **Express.js**, and the data is stored in a **MongoDB** database. The frontend is developed using **HTML**, **CSS**, and **JavaScript**.
